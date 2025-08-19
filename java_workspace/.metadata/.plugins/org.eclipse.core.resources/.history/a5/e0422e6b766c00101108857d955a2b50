@@ -1,0 +1,11 @@
+package com.array;
+
+public class FindMaxElementInAnArray {
+
+	public static void main(String[] args) {
+		
+		
+
+	}
+
+}

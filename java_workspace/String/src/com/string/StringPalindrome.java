@@ -1,0 +1,31 @@
+package com.string;
+
+public class StringPalindrome {
+
+	public static void main(String[] args) {
+
+		String str = "hello";
+
+		boolean status = isStringPalindrome(str);
+
+		if (status) {
+			System.out.println("given str is palindrome.");
+		} else
+
+			System.out.println("str is not palindrome");
+	}
+
+	public static boolean isStringPalindrome(String str) {
+
+		StringBuilder reverse = new StringBuilder();
+
+		char[] data = str.toCharArray();
+
+		for (int i = data.length - 1; i >= 0; i--) {
+
+			reverse.append(data[i]);
+		}
+
+		return reverse.toString().equals(str);
+	}
+}

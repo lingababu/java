@@ -1,0 +1,49 @@
+package com.string;
+
+import java.util.Collections;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class ReverseAString {
+
+	public static void main(String[] args) {
+
+		String str = "lingababu";
+
+		System.out.println(reverseString(str));
+
+	}
+
+	public static String reverseString(String str) {
+
+		/*
+		 * StringBuilder sb = new StringBuilder(str);
+		 * 
+		 * StringBuilder reverse = sb.reverse();
+		 * 
+		 * return reverse.toString();
+		 */
+
+		/*
+		 * StringBuilder reverse = new StringBuilder();
+		 * 
+		 * char[] data = str.toCharArray();
+		 * 
+		 * for (int i = data.length - 1; i >= 0; i--) {
+		 * 
+		 * reverse.append(data[i]); }
+		 * 
+		 * return reverse.toString();
+		 */
+
+		List<Character> data = str.chars().mapToObj(c -> (char) c).collect(Collectors.toList());
+
+		Collections.reverse(data);
+
+		data.stream().map(t -> t.toString()).collect(Collectors.joining());
+
+		return data.toString();
+
+	}
+
+}
